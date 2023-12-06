@@ -1,6 +1,6 @@
 <h1>JavaScript</h1>
 
-<p>Aprendendo melhor JavaScript!</p>
+<p>Aprendendo melhor JavaScript! na aplicação e desenvolvimento de Sites</p>
 
 <p>Neste repositório você irá encontrar alguns códigos como:</p>
 
