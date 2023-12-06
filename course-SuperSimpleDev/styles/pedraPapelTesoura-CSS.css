@@ -1,0 +1,38 @@
+body {
+    background-color:  rgb(25, 25, 25);
+    color: white;
+    font-family: Arial;
+}
+
+.imgMove {
+    height: 50px;
+}
+
+.moveButton {
+    background-color: transparent;
+    border: 3px solid white;
+        /*
+            Primeiro valor -> Indica a expessura da borda
+            Segundo valor -> Indica o tipo da borda
+            Terceiro valor -> Indica a cor da borda
+        */
+    border-radius: 100%;
+    padding: 35px;
+    cursor: pointer;
+    margin: 20px 5px;
+}
+
+.resetButton {
+    padding: 8px 15px;
+    font-size: 15px;
+    border: none;
+}
+
+.score {
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.moves {
+    margin-top: 30px;
+}

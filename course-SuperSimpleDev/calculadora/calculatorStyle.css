@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial;
+}
+
+.res {
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.grayButton {
+    background-color: rgb(68, 67, 67);
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    border: none;
+    border-radius: 30px;
+    margin-right: 5px;
+    color: white;
+    font-family: Arial;
+    cursor: pointer;
+}
+
+.orangeButton {
+    background-color: orange;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-family: Arial;
+    cursor: pointer;
+}
+
+.clearButton {
+    font-size: 17px;
+}

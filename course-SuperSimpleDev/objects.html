@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // Objects são como struct na linguagem C
+        const product = {
+            name: 'socks',
+            price: 1090
+                // Temos a propriedade como se fosse a variável e o value como se fosse o valor dessa variável
+        }
+
+        console.log(product)
+        console.log(product.name)
+            /* 
+            Para acessar uma propriedade de um object é da mesma forma q uma struct em C, usando os pontos para acessar a propriedade após o object 
+            */
+        console.log(product.price)
+
+        product.name = 'Cotton socks'
+
+        console.log(product)
+        console.log(product.name)
+
+        product.newProperty = true
+            /*
+                Dessa forma mesmo que essa propriedade não exista ela será criada, com esse valor dado
+            */
+        console.log(product)
+
+        delete product.newProperty
+            /*
+                Assim é possível excluir qualquer propriedade que esteja dentro do object
+            */
+        console.log(product)
+
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+                // Podemos incluir assim no object, ou sem os [], não fará diferença, sendo optativo
+            rating: {
+                stars: 4.5,
+                count: 87
+                    /*
+                        Podemos colocar objects dentro de outros objects, é so utilizar dessa forma,
+                        não precisando colocar o '=' para indicar o object, somente as {}
+                    */
+            },
+            fun: function function1(){ // Isso é chamdo de Method
+                console.log('function dentro de objects')
+            }
+                /*
+                    Podemos colocar funções dentro de objects, e podendo ser acessadas a partir das
+                    notações usuais
+                */
+        }
+
+        console.log(product2.name)
+        console.log(product2['name'])
+            /*
+                Essa notação usando os colchetes e uma string é a mesma que usando o ponto, sendo usada em algumas ocasiões específicas, como nos casos que temos os
+                sinais aritméticos que o js pensa que realmente são aritméticos como:
+            */
+        console.log(product2['delivery-time'])
+            /*
+                Usando a notação com o ponto, o nome dessa propriedade n seria reconhecido por causa
+                do sinal de '-', portanto usando a notação de [''] isso não ocorre pois tudo é transformado para um string 
+            */
+        
+        console.log(product2.rating.stars)
+        product2.fun()
+            // Assim é chamada a função que está dentro de um object
+
+    /* 
+    - Built-in JSON Object
+            -> Ele ajuda a converter um Object em JavaScript para JSON, o qual possui
+                sintaxe semelhante, mas não suporta alguns tipos de dados, como funções
+                dentro do object.
+            -> o JSON é necessário que tds as propriedade e valores estejam entre aspas
+                duplas "", diferente do JS Object, que não é necessário
+            -> O JSON deve ser mais utilizado pois é mais universal, ou seja, é entendido
+                por diversas linguagens, porém o JavaScript Object so funciona no JS 
+    */
+        
+        // Conversão de JavaScript Object -> JSON 
+            console.log(JSON.stringify(product2))
+                // Isso irá converte o Object em JSON
+        
+        const jsonString = JSON.stringify(product2)
+
+        // Conversão de JSON -> JavaScript Object
+            console.log(JSON.parse(jsonString))
+                // usando o JSON.parse() é possível converter o JSON para o JS Object
+                
+    /*
+        - Buil-in object: localStorage
+            -> É usado para salvar valores permanentemente
+
+            -> Armazenando na localStorage
+                localStorage.setItem('name', 'valueToSave')
+                    - O name é como o localStorage está sendo chamad, e a segunda string será
+                    o valor a ser salvo dentro do storage, localStorage só suporta strings
+
+            -> Retirando da localStorage
+                localStorage.getItem('name')
+                    - Assim é retirado o item armazenado dentro da localStorage chamada
+                    'name'
+            
+    */
+
+    /*
+        OBS.: Os objects são similares aos ponteiros na linguagem C, ou seja, eles apenas
+                apontam para endereços de memórias onde suas propriedades estão armazenadas,
+                dessa forma, se igualarmos dois diferentes objetos, uma com propriedades e
+                outro sem, ele passará a ter o mesmo endereço de memória daquele ao qual
+                foi passado
+    */
+
+        const object = {
+            message: 'Hello',
+            price: 799 
+        }
+
+        // const message = object.message
+        const { message, price } = object
+            /*
+                Esses dois códigos acima tem a mesma função, ou seja, tirar a propriedade de
+                dentro do object e savar em uma variável esterna, utilizando o mesmo nome da propriedade que se encontra dentro do object
+
+                Essa sintaxe também funciona com mais de uma propriedade, é so serparar as
+                propriedades por vígulas dentro das {}
+            */
+        
+        const object2 = {
+            // message: message
+            message,
+                /*
+                    Isso é uma propriedade encurtada, quando ela pega um valor e o nome de
+                    uma variável que esteja fora do object
+                */
+            // method: function function2() {
+            //     consoe.log('method')
+            // }
+            method() {
+                console.log('method')
+            }
+                /*
+                    Esse código funciona exatamente da mesma forma que o de cima, a fim de
+                    declarar um method (função dentro do object), onde não é necessário,
+                    colocar necessariamente 'function nomeDaFunção(){ comandos }', de modo
+                    que o segundo caso é um shortCut, sendo mais prático a se utilizar, por
+                    ser a sitaxe do method
+                */
+        }
+
+        console.log(object2)
+        object2.method()
+            
+    </script>
+</body>
+</html>

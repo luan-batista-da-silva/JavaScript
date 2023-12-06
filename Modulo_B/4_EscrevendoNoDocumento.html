@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual é seu nome?')
+
+        document.write(`Olá, ${nome}!<br/> Seu nome tem ${nome.length} letras.<br/>`)
+            /*
+                o comando 'document.write()' é usado para escrever na página da web propriamente dita,
+                de modo que seja preciso usar comandos do HTML ou CSS se necessário realizar alguma
+                formatação que seja realicionado a tals competências
+            */
+        document.write(`Seu nome em letras maiúsculas é ${nome.toUpperCase()}`)
+        document.write(`<br/>Seu nome em letras minúsculas é ${nome.toLowerCase()}`)
+    </script>
+</body>
+</html>

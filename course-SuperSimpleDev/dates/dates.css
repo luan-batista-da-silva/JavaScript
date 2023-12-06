@@ -1,0 +1,19 @@
+/* Colocando colunas na página */
+
+.divDates {
+    width: 50%; 
+    float: left; 
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background-color: red;
+}
+
+.divButton {
+    width: 50%; 
+    float: right; 
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background-color: blue;
+}

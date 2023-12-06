@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Temperatura</title>
+</head>
+<body>
+    <h1>Conversão de Temperatura</h1>
+    <div>
+        <p>
+            Escolha qual temperatura irá inserir:
+            <input type="radio" name="temp" id="tempCelsius" checked>Celsius
+            <input type="radio" name="temp" id="tempFah" checked>Fahrenheit
+        </p>
+        <p>
+            Insira a Temperatura na escala selecionada:
+            <input type="number" id="tempValor">
+        </p>
+        <input type="button" value="Converter" onclick="calcTemp()">
+    </div>
+    <div id="res">
+
+    </div>
+    <script>
+
+        function calcTemp() {
+            let escalaTerm = document.getElementsByName('temp')
+            let temp = document.querySelector('input#tempValor')
+            let res = document.querySelector('div#res')
+            
+            
+
+            if (escalaTerm[0].checked) {
+                res.innerHTML = `A temperatura em Fahrenheit é ${(Number(temp.value) * 9 / 5) + 32}°F`
+            } else if (escalaTerm[1].checked) {
+                res.innerHTML = `A temperatura em Celsius é ${(Number(temp.value) - 32) * 5 / 9} °C`
+            }
+
+            temp.value = ''
+            temp.focus()
+
+        }
+        
+    </script>
+
+
+</body>
+</html>

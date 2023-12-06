@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 9</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Insira Seu Nome" onkeydown="verEnter(event)">
+    <button onclick="verificar()">Verificar</button>
+    <p id="res"></p>
+    <script>
+        function verificar() {
+            let name = document.querySelector('input#name')
+            let res = document.querySelector('p#res')
+
+            res.innerHTML = `Seu nome é ${name.value}`
+        }
+
+        function verEnter(event) {
+            if (event.key === 'Enter') {
+                verificar()
+            }
+        }
+
+    </script>
+</body>
+</html>

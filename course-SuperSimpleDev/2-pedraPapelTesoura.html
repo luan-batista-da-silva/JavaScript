@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra Papel Tesoura</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Pedra Papel Tesoura</h1>
+    <p>
+        <button onclick=" 
+            computerMove(1)
+            result()
+            movesOfGame()
+            updateScore()
+        " class="mButton">Pedra</button>
+        <button onclick=" 
+            computerMove(2)
+            result()
+            movesOfGame()
+            updateScore()
+        ">Papel</button>
+        <button onclick="
+            computerMove(3)
+            result()
+            movesOfGame()
+            updateScore()
+        ">Tesoura</button>
+    </p>
+    <div id="res"></div>
+    <div id="moves"></div>
+    <div id="score"></div>
+    <div>
+        <p>
+            <button onclick="
+            score.vitorias = 0
+            score.derrotas = 0
+            score.empates = 0
+            localStorage.removeItem('score')
+            resultElem.innerHTML = ''
+            movesElem.innerHTML = ''
+            updateScore()
+            ">Zerar Pontuação</button>
+        </p>
+        
+    </div>
+        
+   
+    <script>
+        /*
+            Steps
+                When we click a button:
+                    1. COmputer randomly seletcs a move
+                    2. Compare the moves to get the result
+                    3. Display the result in an alert 
+        */
+
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            vitorias: 0,
+            derrotas: 0,
+            empates: 0
+        }
+
+        let moves = {
+            compMov: '',
+            playerMov: ''
+        }
+
+        let resul = {
+            resultado: ''
+        }
+/*
+    Aqui estão duas formas de usar os valores booleans simplificados para simplificar o uso
+    e correção de bugs, de modo que se o valore se score === null, será executado o código
+    abaixo, o qual tem a msm funcionalidade do acima, que utiliza o operador ||
+    
+        if (!score) {
+            score = {
+                vitorias: 0,
+                derrotas: 0,
+                empates: 0
+            }
+        }
+*/
+
+        let scoreElem = document.querySelector('#score')
+        let resultElem = document.querySelector('#res')
+        let movesElem = document.querySelector('#moves')
+
+        updateScore()
+
+        function computerMove(playerMove) {
+
+            let randNum = Math.random()
+            let compMov = ''
+            let yourMov = ''
+
+            if (randNum >= 0 && randNum < 1/3) {
+                compMov = 'Pedra'
+                moves.compMov = 'Pedra'
+            } else if (randNum >= 1/3 && randNum < 2/3) {
+                compMov = 'Papel'
+                moves.compMov = 'Papel'
+            } else {
+                compMov = 'Tesoura'
+                moves.compMov = 'Tesoura'
+            }
+
+            let res = ''
+            
+            switch (playerMove) {
+                case 1: 
+                    yourMov = 'Pedra'
+                    moves.playerMov = 'Pedra'
+                    if (compMov === 'Pedra') {
+                        resul.resultado = 'Empate!'
+                        score.empates++
+
+                    } else if (compMov === 'Papel') {
+                        resul.resultado = 'Você Perdeu!'
+                        score.derrotas++
+                    } else {
+                        resul.resultado = 'Você Venceu!'
+                        score.vitorias++
+                    }
+                    break
+                case 2: 
+                    yourMov = 'Papel'
+                    moves.playerMov = 'Papel'
+                    if (compMov === 'Pedra') {
+                        resul.resultado = 'Você Venceu!'
+                        score.vitorias++
+                    } else if (compMov === 'Papel') {
+                        resul.resultado = 'Empate!'
+                        score.empates++
+                    } else {
+                        resul.resultado = 'Você Perdeu!'
+                        score.derrotas++
+                    }
+                    break
+                case 3:
+                    yourMov = 'Tesoura'
+                    moves.playerMov = 'Tesoura'
+                    if (compMov === 'Pedra') {
+                        resul.resultado = 'Você Perdeu!'
+                        score.derrotas++
+                    } else if (compMov === 'Papel') {
+                        resul.resultado = 'Você Venceu!'
+                        score.vitorias++
+                    } else {
+                        resul.resultado = 'Empate!'
+                        score.empates++
+                    }
+                    break
+            }
+
+            localStorage.setItem('score', JSON.stringify(score))
+        }
+
+        function result() {
+            resultElem.innerHTML = `<p>${resul.resultado}</p>`
+        }
+
+        function movesOfGame() {
+            movesElem.innerHTML = `Você escolheu ${moves.playerMov}. O Computador escolheu ${moves.compMov}`
+        }
+
+        function updateScore() {
+            scoreElem.innerHTML = `<p>Vitorias: ${score.vitorias}. Derrotas: ${score.derrotas}. Empates: ${score.empates}</p>`
+        }
+    </script>
+</body>
+</html>

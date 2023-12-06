@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hello</button>
+
+    <script>
+        /*
+        -> The DOM combina JS e HTML juntos em uma mesma página Web
+
+            -> Sintaxe
+                document.
+                Ex: document.body.innerHTML = 'hello'
+                    document.title = 'Good job!'
+
+        */
+
+        console.log(document.title)
+        document.title = 'Changed'
+
+        // Propriedade Body do DOM
+            console.log(document.body)
+            console.log(typeof document.body)
+                /* 
+                    Isso resulta em um objeto, pois quando assim é considerado um objeto, 
+                    assim é têm as msm funções de um objeto, tendo suas propriedades e seus
+                    values
+                */
+        
+        console.log(document.body.innerHTML)
+        document.body.innerHTML = 'Changed'
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Transportes e Locais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Identificador de Transportes e Locais</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                <strong>Para onde irá viajar?</strong> <br/>
+                <input type="radio" name="radLocal" id="praia" checked>
+                    <label for="praia">Praia</label>
+                <input type="radio" name="radLocal" id="foraPais" checked>
+                    <label for="foraPais">Fora do País</label>
+                <input type="radio" name="radLocal" id="pontoTur" checked>
+                    <label for="pontoTur">Ponto Turistico Brasileiro</label>
+            </p>
+            <p>
+                <strong>Qual o meio de Transporte?</strong> <br/>
+                <input type="radio" name="radtransp" id="car" checked>
+                    <label for="car">Carro</label>
+                <input type="radio" name="radtransp" id="train" checked>
+                    <label for="train">Trem</label>
+                <input type="radio" name="radtransp" id="bus" checked>
+                    <label for="bus">Ônibus</label>
+                <input type="radio" name="radtransp" id="boat" checked>
+                    <label for="boat">Barco</label>
+                <input type="radio" name="radtransp" id="airplane" checked>
+                    <label for="airplane">Avião</label>
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res">
+            Aqui aparecerá as duas imagens...
+        </div>
+        <script src="script.js"></script>
+    </section>
+    <footer>
+        <p> &copy: Luan </p>
+    </footer>
+</body>
+</html>

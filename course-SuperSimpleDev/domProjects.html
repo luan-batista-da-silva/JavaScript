@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <h2>Botão de Incrição do YouTube</h2>
+    <button onclick="inscricao()" id="buttonSubscribe">Inscreva-se</button>
+
+    <h2>Amazon Calculadora de Frete</h2>
+
+    <p>Pedidos abaixo de R$40,00 = +R$10,00 de Frete.</p>
+    <p>Pedidos acima de R$40,00 = Frete GRÁTIS.</p>
+
+    <input type="text" placeholder="Custo da Compra" id="precoComp" onkeydown="auxPrecoKeydown(event)">
+    <button onclick="calcFrete()">Calcular</button>
+
+    <p id="res"></p>
+
+    <script>
+        /*
+            Quando clicar no botão de 'Inscreva-se'
+                1. Ao clicar no botão 'Inscreva-se' ele mudará para 'Inscrito'. E vice-versa
+        */
+    
+    function auxPrecoKeydown(event) {
+        if (event.key === 'Enter') {
+            calcFrete()
+        }
+    }
+
+    function inscricao() {
+        let buttonIncribeElement = document.querySelector('button#buttonSubscribe')
+
+        if (buttonIncribeElement.innerText === 'Inscreva-se') {
+            buttonIncribeElement.innerText = 'Inscrito'
+        } else {
+            buttonIncribeElement.innerText = 'Inscreva-se'
+        }
+    }
+
+        /*
+            When we click the button
+                1. Get the text int the text box
+                2. If preço < R$40,00 add R$10,00
+        */
+
+    function calcFrete() {
+        let preco = Number(document.querySelector('input#precoComp').value) 
+        let frete = document.querySelector('p#res')
+
+        if(preco < 40) {
+            preco += 10
+        }
+
+        frete.innerHTML = `O valor total com o frete é R$${preco},00`
+
+    }
+    </script>
+</body>
+</html>

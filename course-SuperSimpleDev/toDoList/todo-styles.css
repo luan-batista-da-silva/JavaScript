@@ -1,0 +1,77 @@
+body{
+    font-family: Arial;
+    font-size: 15px;
+    background: radial-gradient(#f244fb, #fafafa);
+    background-size: 1625px 1000px;
+    display: flex;
+    align-items: center;
+    margin-left: 400px;
+    
+}
+
+.todoGrid, .todoInputGrid {
+    display: grid;
+    grid-template-columns: 300px 300px 75px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.todoInputGrid {
+    margin-bottom: 10px;
+    align-items: stretch;
+    background-image: linear;
+}
+
+.nameInput, .dateInput {
+    font-size: 15px;
+    padding: 6px;
+    text-align: center;
+
+}
+
+.addButton {
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 75px;
+}
+
+.delButton {
+    background-color: darkred;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 75px;
+}
+
+.divRelogio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    background-color: #444;
+    color: #f244fb;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainSection {
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+
+
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando Estudos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(44, 44, 229);
+            color: white;
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 class = "titulo">Iniciando Estudos com DOM</h1>
+    <h2 id = "qsPorId">Query Selector - Por id</h2>
+    <h3 class = "qsPorClass">Query Selector - Por class</h3>
+    <p id = 'par'>Aqui vai o Resultado</p>
+    <p class = 'newClass'>Como usar o <strong>DOM</strong> em JavaScript</p>
+        <!-- 
+            DOM -> Document Object Model
+                Modelo de Objetos para Documentos - Conjunto de objetos dentro do navegador
+                que da acesso aos componentes internos do seu site que está no navegador.
+        
+        -->
+    <div id = "msg" name = "mensagem">Clique em Mim</div>
+    <script>
+
+            /*
+                -> Métodos Para Acessar os Elementos
+                    - Por Marca ( getElementsByTagName()[] )
+                    - Por ID ( getElementById() )
+                    - Por Nome ( getElementsByName()[] )
+                    - Por Classe ( getElementsByClassName()[] )
+                    - Por Seletor
+                        querySelector()
+                        querySelectorAll()
+            */
+
+        // .getElementsByTagName()[]
+        var p1 = window.document.getElementsByTagName('p')[1]
+            /*
+                O colchete após o getElementsByTagName() indica qual a posição da tag que se quer
+                selecionar (Começa a contar de 0) 
+            */
+        window.document.write('Está escrito assim: ' + p1.innerText)
+            /* 
+                O .innerText é usado para escrever o que está armazenado em p1, porém
+                ele pega todo o texto sem a formatação
+            */
+        window.document.write('<br/>Está escrito assim com formatação: ' + p1.innerHTML)
+            /*
+                O .innerHTML pega o texto com todas as tags filhas, ou seja, tds as
+                formatações realizadas dentro do HTML
+            */
+        
+        // .getElementById()
+        var d = window.document.getElementById('msg')
+                /*
+                Assim será selecionado tudo que detêm a id selecionada, que no caso tem o
+                valor de 'msg'
+                */
+        d.style.backgroundColor = 'green'
+        
+        
+        // .getElementsByName()[]
+        var nome = window.document.getElementsByName('mensagem')[0]
+            nome.style.color = 'black'
+        
+        // .getElementsByClassName()[]
+        var classe = window.document.getElementsByClassName('titulo')[0]
+            classe.style.backgroundColor = 'pink'
+            classe.style.color = 'black'
+        
+        // querySelector()
+        var seletor1 = window.document.querySelector('h2#qsPorId')
+            seletor1.style.backgroundColor = 'black'         
+        
+        var seletor2 = window.document.querySelector('h3.qsPorClass')
+            seletor2.style.backgroundColor = 'yellow'
+            seletor2.style.color = 'black'
+            
+            /*
+                No querySelector usamos duas notações para diferenciar Id de Class,
+                    id -> Usamos o #
+                    class -> Usamos o .
+                Assim, é possível indicar qual o nome da Id ou Class que é para ser
+                selecionada pelo querySelector
+            */
+    </script>
+</body>
+</html>

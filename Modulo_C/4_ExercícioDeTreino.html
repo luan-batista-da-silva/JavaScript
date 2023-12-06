@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Interativa</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font: normal 12pt Arial;
+        }
+        
+        div.box{
+            text-align: center;
+            display: inline-block;
+            width: 15%;
+            background-color: green;
+            padding: 20px;
+        }
+        div#zero{
+            display: inline-block;
+            width: 85.5%;
+            margin-top: 5px;
+            background-color: green;
+            padding: 20px;   
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA INTERATIVA</h1>
+    
+    
+    <div class = "box" id = "c"> C </div>
+    <div class = "box" id = "resto"> % </div>    
+    <div class = "box" id = "pot"> ** </div>  
+    <div class = "box" id = "divisao"> / </div>  
+    <div class = "box" id = "sete"> 7 </div>  
+    <div class = "box" id = "oito"> 8 </div>  
+    <div class = "box" id = "nove"> 9 </div>  
+    <div class = "box" id = "mult"> * </div>  
+    <div class = "box" id = "quatro"> 4 </div>  
+    <div class = "box" id = "cinco"> 5 </div>  
+    <div class = "box" id = "seis"> 6 </div>  
+    <div class = "box" id = "sub"> - </div>  
+    <div class = "box" id = "um"> 1 </div>  
+    <div class = "box" id = "dois"> 2 </div>  
+    <div class = "box" id = "tres"> 3 </div>  
+    <div class = "box" id = "soma"> + </div>  
+    <div class = "box" id = "zero"> 0 </div>
+    
+
+    <script>
+        var c = window.document.getElementById('c')
+        var resto = window.document.getElementById('resto')
+        var potencia = window.document.getElementById('pot')
+        var divisao = window.document.getElementById('divisao')
+        var mult = window.document.getElementById('mult')
+        var sub = window.document.getElementById('sub') 
+        var soma = window.document.getElementById('soma')
+        var um = window.document.getElementById('um')
+        var dois = window.document.getElementById('dois')
+        var tres = window.document.getElementById('tres')
+        var quatro = window.document.getElementById('quatro')
+        var cinco = window.document.getElementById('cinco')
+        var seis = window.document.getElementById('seis')
+        var sete = window.document.getElementById('sete')
+        var oito = window.document.getElementById('oito')
+        var nove = window.document.getElementById('nove')
+        var zero = window.document.getElementById('zero')
+
+        c.addEventListener('click', zerar)
+        c.addEventListener('mouseout', sair)
+        soma.addEventListener('click', calcSoma)
+        soma.addEventListener('mouseout', sair)
+        resto.addEventListener('click', calcResto)
+        resto.addEventListener('mouseout', sair)
+        potencia.addEventListener('click', calcPot)
+        potencia.addEventListener('mouseout', sair)
+        divisao.addEventListener('click', calcDiv)
+        divisao.addEventListener('mouseout', sair)
+        mult.addEventListener('click', calcMult)
+        mult.addEventListener('mouseout', sair)
+        sub.addEventListener('click', calcSub)
+        sub.addEventListener('mouseout', sair)
+        um.addEventListener('click', UM)
+        um.addEventListener('mouseout', sair)
+        dois.addEventListener('click', DOIS)
+        dois.addEventListener('mouseout', sair)
+        tres.addEventListener('click', TRES)
+        tres.addEventListener('mouseout', sair)
+        quatro.addEventListener('click', QUATRO)
+        quatro.addEventListener('mouseout', sair)
+        cinco.addEventListener('click', CINCO)
+        cinco.addEventListener('mouseout', sair)
+        seis.addEventListener('click', SEIS)
+        seis.addEventListener('mouseout', sair)
+        sete.addEventListener('click', SETE)
+        sete.addEventListener('mouseout', sair)
+        oito.addEventListener('click', OITO)
+        oito.addEventListener('mouseout', sair)
+        nove.addEventListener('click', NOVE)
+        nove.addEventListener('mouseout', sair)
+        zero.addEventListener('click', ZERO)
+        zero.addEventListener('mouseout', sair)
+
+        // Função Soma
+        function calcSoma() {
+            soma.style.backgroundColor = 'red'
+        }
+
+        // Função de Saida
+        function sair() {
+            soma.style.backgroundColor = 'green'
+            c.style.backgroundColor = 'green'
+            resto.style.backgroundColor = 'green'
+            mult.style.backgroundColor = 'green'
+            sub.style.backgroundColor = 'green'
+            divisao.style.backgroundColor = 'green'
+            potencia.style.backgroundColor = 'green'
+            um.style.backgroundColor = 'green'
+            dois.style.backgroundColor = 'green'
+            tres.style.backgroundColor = 'green'
+            quatro.style.backgroundColor = 'green'
+            cinco.style.backgroundColor = 'green'
+            seis.style.backgroundColor = 'green'
+            sete.style.backgroundColor = 'green'
+            oito.style.backgroundColor = 'green'
+            nove.style.backgroundColor = 'green'
+            zero.style.backgroundColor = 'green'
+
+        }
+        // Função C
+        function zerar() {
+            c.style.backgroundColor = 'red'
+        }
+        // Função Resto
+        function calcResto() {
+            resto.style.backgroundColor = 'red'
+        }
+        // Função Potencia
+        function calcPot() {
+            potencia.style.backgroundColor = 'red'
+        }
+        // Função Divisao
+        function calcDiv() {
+            divisao.style.backgroundColor = 'red'
+        }
+        // Função Multiplição
+        function calcMult() {
+            mult.style.backgroundColor = 'red'
+        }
+        // Função Subtração
+        function calcSub() {
+            sub.style.backgroundColor = 'red'
+        }
+        // Função UM
+        function UM() {
+            um.style.backgroundColor = 'red'
+        }
+        // Função DOIS
+        function DOIS() {
+            dois.style.backgroundColor = 'red'
+        }
+        // Função TRES
+        function TRES() {
+            tres.style.backgroundColor = 'red'
+        }
+        // Função QUATRO
+        function QUATRO() {
+            quatro.style.backgroundColor = 'red'
+        }
+        // Função CINCO
+        function CINCO() {
+            cinco.style.backgroundColor = 'red'
+        }
+        // Função SEIS
+        function SEIS() {
+            seis.style.backgroundColor = 'red'
+        }
+        // Função SETE
+        function SETE() {
+            sete.style.backgroundColor = 'red'
+        }
+        // Função OITO
+        function OITO() {
+            oito.style.backgroundColor = 'red'
+        }
+        // Função NOVE
+        function NOVE() {
+            nove.style.backgroundColor = 'red'
+        }
+        // Função ZERO
+        function ZERO() {
+            zero.style.backgroundColor = 'red'
+        }
+
+
+
+
+    </script>
+</body>
+</html>

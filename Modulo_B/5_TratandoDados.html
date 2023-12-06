@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Arquivo</title> <!-- Comentario em HTML -->
+    <style> /* Comentário em CSS */
+        body{
+            background-color: rgb(49, 59, 176);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script> // Comentário em JS
+        var num1 = Number(window.prompt('Digite um número: '))
+            /*
+                O window.prompt retorna e armazena os dados como uma strin, mesmo que sejam
+                inseridos números pelo usuário
+            */
+        var num2 = Number(window.prompt('Digite outro número: '))
+        
+        /*
+            -> Conversão de String para Number
+                Utilizamos dois comandos possíveis
+                    1. Number.parseInt(n) -> Para transformar em um número inteiro
+                    2. Number.parseFloat(n) -> Para transformar em um número float
+                    3. Number(n) -> Aqui o JS decide como será utilizado o informação recebida, ou seja,
+                                    como int ou como float
+            
+            -> Conversão de Number para String
+                Utilizamos duas formas
+                    1. String(n) -> Gera a string ao colocar a variável dentro dos parênteses
+                    2. n.toString -> Gera a string ao colocar a variável antes de '.toString '
+
+            -> Formatando Strings
+                - PlaceHolder '${}'
+                    - Usamos essa simbologia para evitar a concatenação normal, usando o sinal de +,
+                    a qual dificulta a escrita usando as informações de diferentes variáveis.
+
+                    EX: `O aluno ${nome} com ${idade} anos tirou a nota ${nota}`
+                        Para imprimir dessa forma, deve se usar a crase nos lugares das ''.
+                
+                - s.length -> Quantos caracteres tem na string
+                - s.toUpperCase() -> Tudo para Maiúsculo
+                - s.toLowerCase() -> Tudo para minúsculo
+            
+            -> Tratando Number
+                - n.toFixed(quantidadeDesejada) -> Ao usar isso após a variável, o número float
+                será apresentado com a quantidade de casas decimais Inseridas
+
+                - .replace("X" , "Y") -> Esse comando, deve ocorrer depois de um number ou string,
+                e ele substituirá a ocorrencia da primeira aspas pela segunda
+                
+                - n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) -> Aqui nesse
+                comando é possível colocar um número para qualquer tipo de formato de moeda existente,
+                basta colocar a sigla da moeda na última aspas simples, assim mudando completamente
+                a formatação da moeda
+        */
+        
+        var soma = num1 + num2
+
+        window.alert(`A soma entre ${num1} e ${num2} é igual a ${soma}`)
+    </script>
+</body>
+</html>

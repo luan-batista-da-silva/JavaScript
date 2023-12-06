@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra Papel Tesoura</title>
+</head>
+<link rel="stylesheet" href="styles/pedraPapelTesoura-CSS.css">
+<body>
+    <h1>Pedra Papel Tesoura</h1>
+    <p>
+        <button onclick=" 
+            computerMove(1)
+            result()
+            movesOfGame()
+            updateScore()
+        " class="moveButton"><img src="imagens/rock-emoji.png" class="imgMove"></button>
+        <button onclick=" 
+            computerMove(2)
+            result()
+            movesOfGame()
+            updateScore()
+        " class="moveButton"><img src="imagens/paper-emoji.png" class="imgMove"></button>
+        <button onclick="
+            computerMove(3)
+            result()
+            movesOfGame()
+            updateScore()
+        " class="moveButton"><img src="imagens/scissors-emoji.png" class="imgMove"></button>
+    </p>
+    <div id="res"></div>
+    <div class="moves" id="moves"></div>
+    <div class="score" id="score"></div>
+    <div>
+        <p>
+            <button onclick="
+            score.vitorias = 0
+            score.derrotas = 0
+            score.empates = 0
+            localStorage.removeItem('score')
+            resultElem.innerHTML = ''
+            movesElem.innerHTML = ''
+            updateScore()
+            " class="resetButton">Zerar Pontuação</button>
+        </p>
+    </div>
+    <script src="scripts/pedraPapelTesoura-CSS.js"></script>
+</body>
+</html>

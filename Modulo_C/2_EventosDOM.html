@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos em DOM</title>
+    <style>
+        div#area {
+            font: normal 15pt arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id = "area">
+        <!-- 
+            <div onclick="clicar()" onmouseenter="entrar()" onmouseout="saiu()">
+
+            É assim que se declara um evento dentro do HTML 
+                onclick -> Evento quando ocorre um clique do mouse
+                onmouseenter -> Evento para quando o mouse passa pelo local estabelecido
+                onmouseout -> Evento para quando o mouse sai do local estabelecido
+
+        -->
+        Interaja...
+    </div>
+    <script>
+        var area = window.document.getElementById('area')
+
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        /*
+            Assim é possível declarar os eventos dentro do próprio JS, evitando deixar o
+            html muito poluído
+            Usando o, .addEventListener('', )
+        */
+
+        function clicar() {
+            area.innerText = 'Clicou!!'
+            area.style.backgroundColor = 'red'
+            area.style.color = 'white'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou!!'
+            area.style.backgroundColor = 'yellow'
+            area.style.color = 'black'
+        }
+
+        function sair() {
+            area.innerText = 'Saiu!!'
+            area.style.backgroundColor = 'green'
+            area.style.color = 'white'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        let myArray = [10, 20, 30]
+                //   | 0 | 1 | 2 | -> Índices dos elementos do array 
+        console.log(myArray)
+
+        console.log(myArray[0])
+            // Será mostrado o primeiro valor do array
+
+        secondArray = [1, 'hello', true, { name: 'socks'}, [1, 2]]
+            // Nos arrays podemos armazenar diferentes tipos de valores
+
+        console.log(typeof myArray)
+            // Mostra que os arrays são considerados em JS como objects tbm assim possuem propriedades
+        console.log(Array.isArray([1, 2]))
+            // Aqui ele verifica se é um array e retorna true or False
+
+        console.log(myArray.length)
+            /*
+                A propriedade .length mostra o tamanho do array selecionado
+            */
+
+        myArray.push(100)
+            /*
+                A propriedade .push(__) adiciona um valor a mais no array desejado sempre sendo ao final deste
+            */
+        console.log(myArray)
+            // É possível ver que 100 foi adicionado ao final do array
+        
+        myArray.splice(0, 2)
+            /*
+                A propriedade splice(__, __) é usada para remover valores de arrays. O primeiro parâmetro é o índice
+                do valor a ser removido, o segundo é a quantidade de valores serão removidos a partir desse índice
+            */
+        
+        console.log(myArray)
+
+        
+        
+    </script>
+</body>
+</html>
