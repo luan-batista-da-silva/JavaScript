@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.curso {
+    margin: 10px;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.c1 {
+    background-color: lightgray;
+}
+
+.c2 {
+    background-color: gray;
+}
+
+.c1:hover, .c2:hover {
+    cursor: pointer;
+    border: 3px solid red;
+}
+
+.destaque {
+    background-color: red;
+}

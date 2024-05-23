@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+* {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.relogio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: #444;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}

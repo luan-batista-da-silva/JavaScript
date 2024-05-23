@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <link rel="stylesheet" href="classes.css">
+</head>
+<body>
+    <main>
+        <div class="box" id="name_box">
+            <label for="name">Nome</label>
+            <input type="text" id="name">
+        </div>
+        <div class="box" id="doors_box">
+            <label for="doors">Portas</label>
+            <input type="number" id="doors">
+        </div>
+        <div class="box" id="shield_box">
+            <label for="shield">Blindagem</label>
+            <input type="number" id="shield" disabled value="0">
+        </div>
+        <div class="box" id="armor_box">
+            <label for="armor">Munição</label>
+            <input type="number" id="armor" disabled value="0">
+        </div>
+        <div class="radio_box" id="type_box">
+            <input type="radio" name="type" id="normal_type" checked>
+            <label for="normal_type">Normal</label><br>
+            <input type="radio" name="type" id="military_type">
+            <label for="military_type">Militar</label>
+        </div>
+        <div class="box" id="btn_box">
+            <button id="btn_add">Adicionar</button>
+        </div>
+        <div class="box_cars" id="cars">
+
+        </div>
+        <script src="classes.js"></script>
+    </main>
+</body>
+</html>

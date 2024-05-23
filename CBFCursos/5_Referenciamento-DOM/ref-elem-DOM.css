@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    display: block;
+    background-color: rgb(233, 233, 233);
+    border: 3px solid black;
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    height: 200px;
+}
+
+.curso {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 3px;
+    margin-top: 10px;
+    width: 100px;
+    background-color: rgb(175, 175, 175);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.curso:hover {
+    border: 3px solid red;
+    cursor: pointer;
+}
+
+.selecionado {
+    background-color: red;
+    border: 2px solid rgb(75, 0, 0);
+}
+
+main > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: blue;
+    padding: 7px;
+    border-radius: 6px;
+    border: none;
+
+}
